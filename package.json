@@ -1,0 +1,44 @@
+{
+  "name": "typed-immutable-graphql",
+  "version": "0.0.1",
+  "description": "Typed immutable to graphql conversion",
+  "main": "index.js",
+  "scripts": {
+    "test:cmd": "./node_modules/.bin/_mocha --compilers js:babel-core/register --timeout 100000 --harmony --require babel-polyfill ",
+    "test:custom": "npm run test:cmd -- -w",
+    "test": "npm run test:cmd  './test/*.@(js)' -w",
+    "commit": "commit-wizard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mokanarangan/typed-immutable-graphql.git"
+  },
+  "author": "T Mokanarangan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mokanarangan/typed-immutable-graphql/issues"
+  },
+  "homepage": "https://github.com/Mokanarangan/typed-immutable-graphql#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "chai": "^3.5.0",
+    "chai-string": "^1.3.0",
+    "mocha": "^3.2.0",
+    "pre-git": "^3.11.1"
+  },
+  "dependencies": {
+    "fraction.js": "^3.3.1",
+    "typed-immutable": "0.0.8"
+  },
+  "config": {
+    "pre-git": {
+      "commit-msg": "conventional",
+      "post-commit": "git status",
+      "post-merge": "npm install",
+      "pre-commit": [],
+      "pre-push": [],
+      "post-checkout": []
+    }
+  }
+}
