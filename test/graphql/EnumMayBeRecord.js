@@ -10,8 +10,8 @@ import {
 const EnumValType = new GraphQLEnumType({
   name: 'EnumValType',
   values: {
-    SALARY: 'SALARY',
-    HOURLY: 'HOURLY'
+    SALARY: { value: 'SALARY' },
+    HOURLY: { value: 'HOURLY' }
   },
 });
 

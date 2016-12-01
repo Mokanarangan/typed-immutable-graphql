@@ -58,7 +58,10 @@ const List = (args) => {
       list.importFile.push(args.importFile);
       return generated;
     };
+  } else {
+    list.importFile.push(args.importFile);
   }
+
   list.type = `new GraphQLList(${args.type || args.name})`;
   return list;
 }
