@@ -64,7 +64,7 @@ const Ticket = Record({
     };
     resolveMap[Ticket] = ticketResolveMap;
 ```
-`Member.resolve()` will yield you the following string
+`Member.resolve(resolveMap)` will yield you the following string
 ```js
 import {
   GraphQLInt,
