@@ -62,7 +62,7 @@ const List = (args) => {
     list.importFile.push(args.importFile);
   }
 
-  list.type = `new GraphQLList(${args.type || args.name})`;
+  list.type = `new GraphQLList(${args.type})`;
   return list;
 }
 
@@ -77,7 +77,7 @@ const Maybe = (args) => {
       return generated;
     };
   }
-  maybe.type = args.type || args.name;
+  maybe.type = args.type;
   return maybe;
 }
 
