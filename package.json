@@ -2,13 +2,15 @@
   "name": "typed-immutable-graphql",
   "version": "0.0.1-alpha.1",
   "description": "Typed immutable to graphql conversion",
-  "main": "index.js",
+  "main": "./build/index.js",
   "scripts": {
     "test:cmd": "./node_modules/.bin/_mocha --compilers js:babel-core/register --timeout 100000 --harmony --require babel-polyfill ",
     "test:custom": "npm run test:cmd -- -w",
     "test": "npm run test:cmd  './test/*.@(js)' -w",
     "commit": "commit-wizard",
-		"cover":"istanbul cover _mocha  -- --timeout 10000 --harmony --require babel-register -R spec -c './test/**.js' && xdg-open ./coverage/lcov-report/index.html"
+		"cover":"istanbul cover _mocha  -- --timeout 10000 --harmony --require babel-register -R spec -c './test/**.js' && xdg-open ./coverage/lcov-report/index.html",
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && babel -d ./build ./src -s"
   },
   "repository": {
     "type": "git",
