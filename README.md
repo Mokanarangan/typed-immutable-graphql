@@ -1,6 +1,10 @@
 # typed-immutable-graphql
 Generate graphql types from typed immutable models. Generate the code in compile time or with npm scripts. Refer example
 
+#### Install instructions
+
+`npm install -D typed-immutable-graphql`
+
 #### Example 1
 ```js
 import { Record } from 'typed-immutable-graphql';
