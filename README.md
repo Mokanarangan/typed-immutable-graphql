@@ -1,5 +1,5 @@
 # typed-immutable-graphql
-Generated graphql types from typed-immutable record model. Can be generated at compile time. Refer example.
+Generate graphql types from typed immutable models. Refer example
 
 #### Example 1
 ```js
