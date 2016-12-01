@@ -1,5 +1,5 @@
 # typed-immutable-graphql
-Generate graphql types from typed immutable models. Refer example
+Generate graphql types from typed immutable models. Generate the code in run time or with hooks. Refer example
 
 #### Example 1
 ```js
