@@ -2,7 +2,7 @@
 Generated graphql types from typed-immutable record model. Can be generated at compile time. Refer example.
 
 #### Example 1
-```
+```js
 import { Record } from 'typed-immutable-graphql';
 
 const Ticket = Record({
@@ -11,7 +11,7 @@ const Ticket = Record({
     }, 'Ticket');
 ```
 `Ticket.resolve()` will yield you the following string
-```
+```js
 import {
   GraphQLInt,
   GraphQLNonNull,
@@ -33,7 +33,7 @@ const TicketType = new GraphQLObjectType({
 ```
 #### Example 2 (With resolvers)
 
-```
+```js
 const Ticket = Record({
       id: Maybe(String),
       message: Number,
@@ -65,7 +65,7 @@ const Ticket = Record({
     resolveMap[Ticket] = ticketResolveMap;
 ```
 `Member.resolve()` will yield you the following string
-```
+```js
 import {
   GraphQLInt,
   GraphQLNonNull,
@@ -105,7 +105,7 @@ const MemberType = new GraphQLObjectType({
 ```
 #### Example 3 (Nested expression)
 
-```
+```js
 const Ticket = Record({
       id: Maybe(String),
       type: Maybe(String),
@@ -126,7 +126,7 @@ const Ticket = Record({
 ```
 `Project.resolve()` will yield you the following string
 
-```
+```js
 import {
   GraphQLInt,
   GraphQLList,
@@ -180,10 +180,54 @@ const ProjectType = new GraphQLObjectType({
   }
 });
 ```
+#### Example 4 (Enum)
+
+```js
+ const EnumVal = Typed.Enum({
+      SALARY: 'SALARY',
+      HOURLY: 'HOURLY',
+    },'EnumVal');
+
+    const Employee = Record({
+      id: String,
+      salaryType: EnumVal,
+    }, 'Employee')
+```
+`Employee.resolve()` will yield the following string
+
+```js
+import {
+  GraphQLEnumType,
+  GraphQLNonNull,
+  GraphQLObjectType,
+  GraphQLString
+} from 'graphql/type';
+
+const EnumValType = new GraphQLEnumType({
+  name: 'EnumValType',
+  values: {
+    SALARY: { value: 'SALARY' },
+    HOURLY: { value: 'HOURLY' }
+  },
+});
+
+const EmployeeType = new GraphQLObjectType({
+  name: 'EmployeeType',
+  fields: {
+      id : {
+        type: new GraphQLNonNull(GraphQLString),
+      },
+      salaryType : {
+        type: new GraphQLNonNull(EnumValType),
+      }
+  }
+});
+```
+
 
 You can place the generated code the code at compile time with a hook and use it.
 
-Not sure how useful this project is. Refer to the test for Enum, Float.
+Not sure how useful this project is. Refer test for more examples
 
 ### License
 MIT
