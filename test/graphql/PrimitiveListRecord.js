@@ -3,7 +3,8 @@
 import {
   GraphQLList,
   GraphQLNonNull,
-  GraphQLObjectType
+  GraphQLObjectType,
+  GraphQLString
 } from 'graphql/type';
 
 const TicketType = new GraphQLObjectType({

@@ -1,8 +1,11 @@
+import {
+  GraphQLEnumType
+} from 'graphql/type';
 
 const enumValType = new GraphQLEnumType({
   name: 'enumValType',
   values: {
-    SALARY: 'SALARY',
-    HOURLY: 'HOURLY'
+    SALARY: { value: 'SALARY' },
+    HOURLY: { value: 'HOURLY' }
   },
 });

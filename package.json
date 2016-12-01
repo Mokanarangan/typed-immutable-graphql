@@ -7,7 +7,8 @@
     "test:cmd": "./node_modules/.bin/_mocha --compilers js:babel-core/register --timeout 100000 --harmony --require babel-polyfill ",
     "test:custom": "npm run test:cmd -- -w",
     "test": "npm run test:cmd  './test/*.@(js)' -w",
-    "commit": "commit-wizard"
+    "commit": "commit-wizard",
+		"cover":"istanbul cover _mocha  -- --timeout 10000 --harmony --require babel-register -R spec -c './test/**.js' && xdg-open ./coverage/lcov-report/index.html"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,8 @@
     "chai": "^3.5.0",
     "chai-string": "^1.3.0",
     "mocha": "^3.2.0",
-    "pre-git": "^3.11.1"
+    "pre-git": "^3.11.1",
+    "istanbul": "1.0.0-alpha.2"
   },
   "dependencies": {
     "fraction.js": "^3.3.1",

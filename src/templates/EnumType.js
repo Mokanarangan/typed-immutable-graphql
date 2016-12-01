@@ -4,7 +4,7 @@ export default (type, values) => `
 const ${type} = new GraphQLEnumType({
   name: '${type}',
   values: {
-    ${_.map(values, (val, key) => `${key}: '${val}'`).join(',\n    ')}
+    ${_.map(values, (val, key) => `${key}: { value: '${val}' }`).join(',\n    ')}
   },
 });
 `;
